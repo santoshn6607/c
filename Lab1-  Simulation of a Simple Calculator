@@ -1,0 +1,25 @@
+#include <stdio.h>
+
+int main() {
+    int num1, num2, choice;
+    char op;
+    
+    do {
+        printf("\nEnter expression (e.g., 3+2): ");
+        scanf("%d%c%d", &num1, &op, &num2);
+        
+        switch(op) {
+            case '+': printf("Result = %d\n", num1 + num2); break;
+            case '-': printf("Result = %d\n", num1 - num2); break;
+            case '*': printf("Result = %d\n", num1 * num2); break;
+            case '/': printf("Result = %.2f\n", (float)num1 / num2); break;
+            case '%': printf("Result = %d\n", num1 % num2); break;
+            default: printf("Invalid operator!\n");
+        }
+        
+        printf("Press 1 to continue, 0 to quit: ");
+        scanf("%d", &choice);
+    } while (choice);
+    
+    return 0;
+}
