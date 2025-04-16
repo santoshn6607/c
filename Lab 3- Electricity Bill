@@ -32,3 +32,15 @@ Example Output:
 Name: Ravi
 Units: 350
 Total: ₹467.25
+
+***********************************************************************************************************************************
+
+If u <= 200: u * 0.8
+
+Else if u <= 300:
+200 * 0.8 for first 200 + (u - 200) * 0.9 for the next units
+
+Else (u > 300):
+200 * 0.8 + 100 * 0.9 for first 300 + (u - 300) * 1.0 for the remaining units
+
+This result is added to the fixed ₹100 base charge.
