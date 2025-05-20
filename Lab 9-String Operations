@@ -1,0 +1,56 @@
+#include <stdio.h>
+
+// String Length
+int strLength(const char *s) {
+    int i = 0;
+    while (s[i]) i++;
+    return i;
+}
+
+// String Compare
+int strCompare(const char *s1, const char *s2) {
+    int i = 0;
+    while (s1[i] && s1[i] == s2[i]) i++;
+    return s1[i] - s2[i];
+}
+
+// String Concatenate
+void strConcat(char *s1, const char *s2) {
+    int i = 0, j = 0;
+    while (s1[i]) i++;
+    while (s2[j]) s1[i++] = s2[j++];
+    s1[i] = '\0';
+}
+
+int main() {
+    char str1[100], str2[50];
+    
+    printf("Enter first string: ");
+    scanf("%s", str1);
+
+    printf("Enter second string: ");
+    scanf("%s", str2);
+
+    printf("\nLength of first string: %d", strLength(str1));
+    printf("\nLength of second string: %d", strLength(str2));
+
+    int cmp = strCompare(str1, str2);
+    printf("\nComparison: %s", (cmp == 0) ? "Equal" : (cmp < 0) ? "Less" : "Greater");
+
+    strConcat(str1, str2);
+    printf("\nConcatenated string: %s\n", str1);
+
+    return 0;
+}
+
+
+**********************************OUTPUT******************************************************************
+
+
+Enter first string: hello
+Enter second string: world
+
+Length of first string: 5
+Length of second string: 5
+Comparison: Less
+Concatenated string: helloworld
