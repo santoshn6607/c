@@ -1,0 +1,44 @@
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+    float angle_deg, angle_rad, sin_val = 0, cos_val = 0, term;
+    int i, terms;
+
+    printf("Enter angle in degrees: ");
+    scanf("%f", &angle_deg);
+    printf("Enter number of terms: ");
+    scanf("%d", &terms);
+
+    angle_rad = angle_deg * M_PI / 180;
+
+    // Sine calculation
+    term = angle_rad;
+    for (i = 1; i <= terms; i++) {
+        sin_val += term;
+        term *= -angle_rad * angle_rad / ((2 * i) * (2 * i + 1));
+    }
+
+    // Cosine calculation
+    term = 1;
+    for (i = 1; i <= terms; i++) {
+        cos_val += term;
+        term *= -angle_rad * angle_rad / ((2 * i - 1) * (2 * i));
+    }
+
+    printf("\nCalculated Sin(%g)/Cos(%g) = %g", angle_deg, angle_deg, sin_val / cos_val);
+    printf("\nBuilt-in Sin(%g)/Cos(%g) = %g\n", angle_deg, angle_deg, sin(angle_rad) / cos(angle_rad));
+
+    return 0;
+}
+
+*******************************************OUTPUT*****************************************************************************
+
+
+Enter angle in degrees: 45
+Enter number of terms: 5
+
+Calculated Sin(45)/Cos(45) = 1.000003
+Built-in Sin(45)/Cos(45) = 1.000000
+
+
