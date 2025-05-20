@@ -1,0 +1,44 @@
+#include <stdio.h>
+
+int main() {
+    int iNum, i, j, temp, arr[10];
+
+    printf("Enter number of elements (max 10): ");
+    scanf("%d", &iNum);
+
+    printf("Enter %d elements:\n", iNum);
+    for (i = 0; i < iNum; i++)
+        scanf("%d", &arr[i]);
+
+    // Bubble Sort
+    for (i = 0; i < iNum - 1; i++) {
+        for (j = 0; j < iNum - i - 1; j++) {
+            if (arr[j] > arr[j + 1]) {
+                temp = arr[j];
+                arr[j] = arr[j + 1];
+                arr[j + 1] = temp;
+            }
+        }
+    }
+
+    printf("Sorted array:\n");
+    for (i = 0; i < iNum; i++)
+        printf("%d ", arr[i]);
+
+    printf("\n");
+    return 0;
+}
+
+**************************************************************************************************
+
+Enter number of elements (max 10): 5
+Enter 5 elements:
+34
+12
+5
+67
+23
+
+
+Sorted array:
+5 12 23 34 67
