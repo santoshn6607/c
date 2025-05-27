@@ -1,3 +1,4 @@
+//Write a C program to copy a text file to another, read both the input file name and target file name
 #include <stdio.h>
 
 int main() {
