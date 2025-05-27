@@ -1,0 +1,44 @@
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+    int N, i;
+    float sum = 0, mean, std_dev = 0;
+
+    printf("Enter number of elements: ");
+    scanf("%d", &N);
+
+    float arr[N], *ptr = arr;
+
+    // Reading elements and calculating sum
+    for (i = 0; i < N; i++) {
+        printf("Enter element %d: ", i + 1);
+        scanf("%f", ptr + i);
+        sum += *(ptr + i);
+    }
+
+    mean = sum / N;
+
+    // Calculating standard deviation
+    for (i = 0; i < N; i++) {
+        std_dev += pow(*(ptr + i) - mean, 2);
+    }
+    std_dev = sqrt(std_dev / N);
+
+    printf("\nSum = %.2f", sum);
+    printf("\nMean = %.2f", mean);
+    printf("\nStandard Deviation = %.2f\n", std_dev);
+
+    return 0;
+}
+***********************************************OUTPUT*******************************************************************
+
+Enter number of elements: 4
+Enter element 1: 2
+Enter element 2: 4
+Enter element 3: 6
+Enter element 4: 8
+
+Sum = 20.00
+Mean = 5.00
+Standard Deviation = 2.24
