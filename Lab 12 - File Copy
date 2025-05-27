@@ -1,0 +1,50 @@
+#include <stdio.h>
+
+int main() {
+    char source[100], target[100];
+    FILE *f1, *f2;
+    char ch;
+
+    // Read file names
+    printf("Enter source file name: ");
+    scanf("%s", source);
+    printf("Enter target file name: ");
+    scanf("%s", target);
+
+    // Open source file for reading
+    f1 = fopen(source, "r");
+    if (f1 == NULL) {
+        printf("Cannot open source file.\n");
+        return 1;
+    }
+
+    // Open target file for writing
+    f2 = fopen(target, "w");
+    if (f2 == NULL) {
+        printf("Cannot open target file.\n");
+        fclose(f1);
+        return 1;
+    }
+
+    // Copy contents
+    while ((ch = fgetc(f1)) != EOF) {
+        fputc(ch, f2);
+    }
+
+    printf("File copied successfully.\n");
+
+    fclose(f1);
+    fclose(f2);
+
+    return 0;
+}
+*********************************OUTPUT********************************
+
+How to Use:
+Create a sample text file, e.g., input.txt.
+
+Run the program and enter:
+
+Enter source file name: input.txt
+Enter target file name: output.txt
+It will create output.txt with the same content.
