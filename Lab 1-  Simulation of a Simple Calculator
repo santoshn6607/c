@@ -1,3 +1,5 @@
+//  Simulation of a Simple Calculator.
+
 #include <stdio.h>
 
 int main() {
