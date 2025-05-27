@@ -1,3 +1,5 @@
+ //Develop a program using pointers to compute the sum, mean and standard deviation of all elements stored in an array of N real numbers.
+
 #include <stdio.h>
 #include <math.h>
 
