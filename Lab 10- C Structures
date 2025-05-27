@@ -1,0 +1,59 @@
+#include <stdio.h>
+
+struct Student {
+    char name[50];
+    float marks;
+};
+
+int main() {
+    int N, i;
+    float sum = 0, average;
+
+    printf("Enter number of students: ");
+    scanf("%d", &N);
+
+    struct Student s[N];
+
+    // Reading student data
+    for (i = 0; i < N; i++) {
+        printf("Enter name and marks of student %d: ", i + 1);
+        scanf("%s %f", s[i].name, &s[i].marks);
+        sum += s[i].marks;
+    }
+
+    average = sum / N;
+    printf("\nAverage Marks: %.2f\n", average);
+
+    // Students scoring above average
+    printf("\nStudents scoring ABOVE average:\n");
+    for (i = 0; i < N; i++) {
+        if (s[i].marks > average) {
+            printf("%s - %.2f\n", s[i].name, s[i].marks);
+        }
+    }
+
+    // Students scoring below average
+    printf("\nStudents scoring BELOW average:\n");
+    for (i = 0; i < N; i++) {
+        if (s[i].marks < average) {
+            printf("%s - %.2f\n", s[i].name, s[i].marks);
+        }
+    }
+
+    return 0;
+}
+*****************************************OUTPUT*************************************************************
+
+Enter number of students: 3
+Enter name and marks of student 1: Alice 78
+Enter name and marks of student 2: Bob 55
+Enter name and marks of student 3: Charlie 85
+
+Average Marks: 72.67
+
+Students scoring ABOVE average:
+Alice - 78.00
+Charlie - 85.00
+
+Students scoring BELOW average:
+Bob - 55.00
