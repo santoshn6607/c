@@ -1,3 +1,5 @@
+// Compute the roots of a quadratic equation by accepting the coefficients. Print appropriate messages.
+
 #include <stdio.h>
 #include <math.h>
 
